@@ -1,0 +1,15 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_volley"
+        app:titleTextColor="@android:color/white"
+        android:title="Volley"
+        android:itemTextAppearance="@style/AppTheme.PopupMenu"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_retrofit"
+        app:titleTextColor="@android:color/white"
+        android:title="Retrofit"
+        android:itemTextAppearance="@style/AppTheme.PopupMenu"
+        app:showAsAction="always" />
+</menu>

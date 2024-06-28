@@ -1,0 +1,61 @@
+package com.example.week_07_ex_2
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+import com.example.week_07_ex_2.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
+    lateinit var volleyFragment: VolleyFragment
+    lateinit var retrofitFragment: RetrofitFragment
+    var mode = "volley"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
+
+
+        volleyFragment = VolleyFragment()
+        retrofitFragment = RetrofitFragment()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.activity_content, volleyFragment)
+            .commit()
+        supportActionBar?.title = "Volley Test"
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        //volley mode
+        if(item.itemId == R.id.menu_volley && mode !== "volley"){
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.activity_content, volleyFragment)
+                .commit()
+            mode="volley"
+            supportActionBar?.title="Volley Test"
+        }
+
+        //retrofit mode
+        else if(item.itemId == R.id.menu_retrofit && mode !== "retrofit"){
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.activity_content, retrofitFragment)
+                .commit()
+            mode="retrofit"
+            supportActionBar?.title="Retrofit Test"
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}

@@ -1,0 +1,94 @@
+<!-- XML 파트 -->
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android=
+    "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/Edit1"
+            android:hint="숫자1" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/Edit2"
+            android:hint="숫자2" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/BtnAdd"
+            android:text="더하기" />
+        /////////////Todo///////////////
+    </LinearLayout>
+
+</LinearLayout>
+
+
+//코틀린 파트
+package com.example.mycalapplication
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+    lateinit var edit1 : EditText;  lateinit var edit2 : EditText
+    lateinit var btnAdd : Button;   lateinit var btnSub : Button
+    lateinit var btnMul : Button;   lateinit var btnDiv : Button
+    
+    lateinit var textResult : TextView
+    lateinit var num1 : String; lateinit var num2 :  String
+    var result : Int? = null
+    var number : Int = 0
+    var tictok : Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        title = number.toString() + "회 계산기"
+
+        edit1 = findViewById<EditText>(R.id.Edit1)
+        edit2 = findViewById<EditText>(R.id.Edit2)
+
+        btnAdd = findViewById<Button>(R.id.BtnAdd)
+        btnSub = findViewById<Button>(R.id.BtnSub)
+        btnMul = findViewById<Button>(R.id.BtnMul)
+        btnDiv = findViewById<Button>(R.id.BtnDiv)
+
+
+        textResult = findViewById<TextView>(R.id.TextResult)
+
+        btnAdd.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+        }
+
+        btnSub.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+        }
+
+        btnMul.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+        }
+
+        btnDiv.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+        }
+
+    }
+}
+
